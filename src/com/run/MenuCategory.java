@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MenuCategory {
 	public static Category[] categories = new Category[0];
 	public static int indexCategory = 0;
+	
 	public static void menuCategory(Scanner scanner) {
 		do {
 			System.out.println("**************** MENU ****************");
@@ -61,10 +62,10 @@ public class MenuCategory {
 			for (int i = 0; i < categories.length; i++) {
 				newCategories[i] = categories[i];
 			}
-			for (int i = categories.length - 1; i < n; i++) {
-				newCategories[i] = new Category();
-				newCategories[i].setId(getNewCategoryId(newCategories));
-				newCategories[i].inputData(scanner);
+			for (int i = 0; i < n; i++) {
+				newCategories[indexCategory] = new Category();
+				newCategories[indexCategory].setId(getNewCategoryId(newCategories));
+				newCategories[indexCategory].inputData(scanner);
 				categories = newCategories;
 				indexCategory++;
 			}
